@@ -1,7 +1,7 @@
-class Articulo {
+export default class Articulo {
 
   codigo: number;
-  descripción: string;
+  descripcion: string;
   precio: number;  
   
   constructor(
@@ -11,7 +11,7 @@ class Articulo {
     ) {
       
       this.codigo = codigo;
-      this.descripción = descripcion;
+      this.descripcion = descripcion;
       this.precio = precio;
 
   }

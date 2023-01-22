@@ -7,13 +7,17 @@
         <th>Código</th>
         <th>Descripción</th>
         <th>Precio</th>
-        <th>Borrar</th>
         <th>Seleccionar</th>
+        <th>Borrar</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-
+      <tr *ngFor="let art of articulos">
+        <td>{{art.codigo}}</td>
+        <td>{{art.descripcion}}</td>
+        <td>{{art.precio}}</td>
+        <td><button>seleccionar</button></td>
+        <td><button>borrar</button></td>
       </tr>
     </tbody>
   </table>
@@ -31,6 +35,6 @@
   </p>
   <p>
     <button (click)="agregar()">Agregar</button>
-    <button (click)="elimiinar()">Modificar</button>
+    <button (click)="eliminar()">Modificar</button>
   </p>
 </div>
