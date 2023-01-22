@@ -21,4 +21,28 @@
   </table>
   <p>En los últimos 3 meses ha ganado {{ultimos3Sueldos()}}</p>
   <p>{{esActivo()}}</p>
+  <hr>
+  <h3>6 - Captura de eventor</h3>
+  <div>
+    <p>{{contador}}</p>
+    <button (click)="incrementar()">Incrementar 1</button>
+    <button (click)="decrementar()">Decrementar 1</button>
+  </div>
+  <br>
+  <hr>
+  <h3>7 - Directiva ngModel</h3>
+  Data binding unidireccional (modelo a vista)
+  <input type="text" [ngModel]="nombre">
+  <br>
+  Data binding bidireccional (modelo-vista):
+  <input type="text" [(ngModel)]="nombre">
+  
+  <h4>Lectura y escritura de datos:</h4>
+
+  <div>
+      <p>ingrese nombre: <input type="text" [(ngModel)]="nombre"></p>
+      <p>ingrese apellido: <input type="text" [(ngModel)]="apellido"></p>
+      <p>Nombre completo: {{nombre}}m {{apellido}}</p>
+  </div>
+
 </div>
