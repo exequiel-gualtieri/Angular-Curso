@@ -11,6 +11,7 @@ export class AppComponent {
   codigo:number = 0;
   descripcion:string = '';
   precio:number = 0;
+  btnModificar = false;
 
   agregar() {
     if( !this.descripcion || !this.precio) {
@@ -21,10 +22,10 @@ export class AppComponent {
 
     let articulo: Articulo = new Articulo(this.articulos.length, this.descripcion, this.precio);
     this.articulos.push(articulo);
-    this.ordenar
+    this.ordenar()
     alert('El artículo se agregó de forma correcta');
     
-    this.codigo = 0;
+    //this.codigo = 0;
     this.descripcion = '';
     this.precio = 0;
 
@@ -45,5 +46,32 @@ export class AppComponent {
       e.codigo = i + 1
     })
   }
-  // eliminar(art) {
+
+  seleccionar(art:Articulo) {
+    this.codigo = art.codigo;
+    this.descripcion = art.descripcion;
+    this.precio = art.precio;
+    this.btnModificar = !this.btnModificar 
+  }
+
+  modificar() {
+    let articulo : any = this.buscarArticulo(this.codigo);
+    articulo.descripcion = this.descripcion;
+    articulo.precio = this.precio;
+
+    this.limpiarCampos()
+    alert('El artículo se modificó correctamente');
+    this.btnModificar = !this.btnModificar
+  }
+
+  limpiarCampos()  {
+    this.codigo = 0;
+    this.descripcion = '';
+    this.precio = 0;
+  }
+
+  hayRegistros() {
+    return Boolean(this.articulos.length);
+  }
+    
 }

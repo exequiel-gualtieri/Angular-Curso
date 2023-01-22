@@ -1,7 +1,7 @@
 <div>
   <h1>Administrador de artículos </h1>
 
-  <table border="1">
+  <table *ngIf="hayRegistros()" border="1">
     <thead>
       <tr>
         <th>ID</th>
@@ -16,8 +16,8 @@
         <td>{{art.codigo}}</td>
         <td>{{art.descripcion}}</td>
         <td>{{art.precio}}</td>
-        <td><button>seleccionar</button></td>
-        <td><button (click)="borrar(art.codigo)">borrar</button></td>
+        <td><button (click)="seleccionar(art)">seleccionar</button></td>
+        <td><div><button (click)="borrar(art.codigo)">borrar</button></div></td>
       </tr>
     </tbody>
   </table>
@@ -32,6 +32,6 @@
   </p>
   <p>
     <button (click)="agregar()">Agregar</button>
-    <button>Modificar</button>
+    <button *ngIf="btnModificar" (click)="modificar()">Modificar</button>
   </p>
 </div>
