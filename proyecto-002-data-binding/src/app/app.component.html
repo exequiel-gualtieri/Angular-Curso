@@ -21,16 +21,16 @@
 <br> 
 <div>
   <p>
-    Código: <input type="number">
+    Código: <input type="number" [(ngModel)]="codigo">
   </p>
   <p>
-    Código: <input type="numer"> €
+    Descripción: <input type="text"[(ngModel)]="descripcion">
   </p>
   <p>
-    Código: <input type="number">
+    Precio: <input type="number" [(ngModel)]="precio"> €
   </p>
   <p>
-    <button>Agregar</button>
-    <button>Modificar</button>
+    <button (click)="agregar()">Agregar</button>
+    <button (click)="elimiinar()">Modificar</button>
   </p>
 </div>
